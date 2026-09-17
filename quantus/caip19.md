@@ -2,7 +2,7 @@
 namespace-identifier: quantus-caip19
 title: Quantus Namespace - Assets
 author: ["Nikolaus Heger (@n13)"]
-discussions-to: https://github.com/ChainAgnostic/namespaces/pulls
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/228
 status: Draft
 type: Standard
 created: 2026-09-17
