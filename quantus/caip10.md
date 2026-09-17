@@ -16,8 +16,9 @@ requires: ["CAIP-2", "CAIP-10"]
 ## Rationale
 
 A Quantus account is identified on-chain by a 32-byte account ID.
-For accounts controlled by a key, the account ID is the [Poseidon][] hash of the ML-DSA-87 public key.
-The public key itself is 2592 bytes and is never used as an address; it is only revealed inside a signed transaction.
+For accounts controlled by a key, the account ID is the [Poseidon][] hash of the ML-DSA public key.
+Both ML-DSA-87 and ML-DSA-65 keys are supported, and the account ID does not reveal which was used.
+The public key itself is 2592 bytes for ML-DSA-87 or 1952 bytes for ML-DSA-65 and is never used as an address; it is only revealed inside a signed transaction.
 Other account IDs, such as multisig and pallet-derived accounts, are 32-byte values with no corresponding key.
 
 Account IDs are presented to users in [SS58][] encoding with the network prefix `189`, which is registered to Quantus in the [SS58 registry][].

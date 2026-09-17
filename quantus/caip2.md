@@ -95,7 +95,7 @@ quantus:planck
 
 Quantus is built with the Polkadot SDK, and the `polkadot` namespace would have given mainnet the identifier `polkadot:fb5487c0be6ae4ade2d41d16e5046512`.
 That identifier was rejected because it would misrepresent the compatibility between Quantus and Polkadot chains.
-Quantus signs with ML-DSA-87, derives accounts by hashing the public key with Poseidon, hashes blocks with Poseidon, uses proof-of-work consensus and does not support XCM.
+Quantus signs with ML-DSA-87 or ML-DSA-65, derives accounts by hashing the public key with Poseidon, hashes blocks with Poseidon, uses proof-of-work consensus and does not support XCM.
 No wallet or signer built for the `polkadot` namespace can produce a valid Quantus transaction.
 
 ## References

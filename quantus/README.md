@@ -10,7 +10,7 @@ created: 2026-09-17
 # Namespace for Quantus Network
 
 Quantus Network is a post-quantum secure Layer-1 blockchain.
-Transactions are signed with ML-DSA-87 ([FIPS 204][], the standardized form of CRYSTALS-Dilithium) instead of the elliptic-curve schemes used by most other chains, accounts are derived from ML-DSA public keys with the [Poseidon][] hash, and blocks are produced by a proof-of-work consensus called QPoW.
+Transactions are signed with ML-DSA ([FIPS 204][], the standardized form of CRYSTALS-Dilithium) at the ML-DSA-87 or ML-DSA-65 security level instead of the elliptic-curve schemes used by most other chains, accounts are derived from ML-DSA public keys with the [Poseidon][] hash, and blocks are produced by a proof-of-work consensus called QPoW.
 
 The node and runtime are built with the [Polkadot SDK][] (Substrate), so the JSON-RPC surface, SCALE encoding and [SS58][] address encoding will look familiar to developers who know that ecosystem.
 Wallets, signers and dapps written for Polkadot chains cannot, however, sign Quantus transactions or verify Quantus signatures, and Quantus does not participate in XCM.
@@ -20,8 +20,8 @@ The `quantus` namespace exists so that this difference is visible at the address
 
 Quantus differs from the `polkadot` namespace in the parts that matter to cross-chain tooling:
 
-- **Signatures**: every extrinsic is signed with ML-DSA-87. There is no sr25519, ed25519 or ECDSA support.
-- **Account derivation**: an account ID is the 32-byte Poseidon hash of the ML-DSA-87 public key, not the public key itself.
+- **Signatures**: every extrinsic is signed with ML-DSA-87 or ML-DSA-65. There is no sr25519, ed25519 or ECDSA support.
+- **Account derivation**: an account ID is the 32-byte Poseidon hash of the ML-DSA public key, not the public key itself.
 - **Block hashing**: block headers are hashed with Poseidon, not Blake2.
 - **Consensus**: blocks are mined with QPoW. There are no validators, nominators or relay chain.
 
